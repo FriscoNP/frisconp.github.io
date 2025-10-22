@@ -1,91 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-slate-200">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>FriscoNP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frisco — Backend Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <div class="w-1/2 mx-auto my-16">
-    <div
-      class="p-4 bg-amber-300 text-slate-700 text-sm font-medium text-center mb-8 border border-amber-500 rounded-md">
-      Exciting things are brewing! This site is still under development. Thank you for your patience and stay tuned for
-      more.
-    </div>
-    <header class="mb-8">
-      <!-- title and description -->
-      <div class="mb-4">
-        <h1 class="text-3xl font-bold text-dark mb-3">👋 Hi there, it's Frisco!</h1>
-        <div class="text-slate-500 text-md font-normal">
-          I'm a digital explorer turning coffee into code, where creativity meets logic and challenges become elegant
-          solutions.
-        </div>
-      </div>
+<body class="flex flex-col min-h-screen bg-white text-gray-900">
 
-      <!-- social media button -->
-      <div class="flex flex-row space-x-4">
-        <a href="https://www.linkedin.com/in/frisconp/" target="_blank"
-          class="py-2 px-4 bg-slate-50 text-sm font-bold text-dark rounded-md shadow-md hover:bg-blue-700 hover:text-white transition-colors duration-300 ease-in-out">
-          <i class="fa-brands fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://www.instagram.com/fnp.dev/" target="_blank"
-          class="py-2 px-4 bg-slate-50 text-sm font-bold text-dark rounded-md shadow-md hover:bg-fuchsia-700 hover:text-white transition-colors duration-300 ease-in-out">
-          <i class="fa-brands fa-instagram"></i>
-          <span>Instagram</span>
-        </a>
-        <a href="mailto:frisconp.official@gmail.com"
-          class="py-2 px-4 bg-slate-50 text-sm font-bold text-dark rounded-md shadow-md hover:bg-slate-700 hover:text-white transition-colors duration-300 ease-in-out">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Email</span>
-        </a>
-        <a href="#"
-          class="flex-auto text-center py-2 px-4 bg-blue-600 text-sm font-bold text-white rounded-md shadow-md hover:bg-blue-700 transition-colors duration-300 ease-in-out">
-          <i class="fa-solid fa-arrow-right"></i>
-          <span>More about me</span>
-        </a>
-      </div>
-    </header>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-16">
+        <!-- Hero Section -->
+        <section class="flex flex-col items-center text-center mt-10">
+            <img src="assets/png/avatar.png" alt="Frisco Avatar"
+                class="w-32 mb-4 rounded-full border-4 border-gray-100 shadow-sm">
+            <h1 class="text-3xl font-bold tracking-tight mb-2">Frisco</h1>
+            <p class="text-gray-600 text-center max-w-md mb-4">
+                Backend Engineer who builds scalable, maintainable systems with <strong>Golang</strong>.
+                Experienced with <strong>PHP</strong> frameworks like Laravel and CodeIgniter.
+                Focused on clean architecture and reliable delivery.
+            </p>
 
-    <!-- projects -->
-    <section class="mb-8">
-      <h3 class="text-xl font-bold mb-4">Projects</h3>
-      <div class="space-y-2">
-        <div class="bg-white p-4 border border-slate-300 rounded-md shadow-md">
-          <h4 class="text-md font-medium"><i class="fa-brands fa-js text-amber-300"></i> express-api</h4>
-        </div>
-        <div class="bg-white p-4 border border-slate-300 rounded-md shadow-md">
-          <h4 class="text-md font-medium"><i class="fa-brands fa-golang text-sky-400"></i> golang-api</h4>
-        </div>
-      </div>
-    </section>
-
-    <!-- blogs -->
-    <section class="mb-8">
-      <h3 class="text-xl font-bold mb-4">Blogs</h3>
-      <div class="space-y-2">
-        <div class="bg-white p-4 border border-slate-300 rounded-md shadow-md">
-          <h4 class="text-md font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
-        </div>
-        <div class="bg-white p-4 border border-slate-300 rounded-md shadow-md">
-          <h4 class="text-md font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
-        </div>
-      </div>
-    </section>
+            <a href="mailto:frisconp.official@gmail.com"
+                class="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition">
+                Get In Touch
+            </a>
+        </section>
 
 
-  </div>
+        <!-- About Section -->
+        <section class="mt-16 max-w-3xl w-full">
+            <h2 class="text-sm font-semibold text-gray-600 mb-4">ABOUT</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                I'm passionate about designing backend systems that emphasize clarity, scalability, and performance.
+                I believe clean architecture is the foundation for good software — whether it's a microservice in Go
+                or a monolithic Laravel app. I enjoy solving problems quietly behind the scenes and letting the code
+                speak for itself.
+            </p>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="mt-16 max-w-3xl w-full">
+            <h2 class="text-sm font-semibold text-gray-600 mb-4">TECH STACK</h2>
+            <ul class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-gray-700 text-sm text-center">
+                <li class="border border-gray-200 rounded-lg py-3 hover:bg-gray-50 transition">⚙️ Golang</li>
+                <li class="border border-gray-200 rounded-lg py-3 hover:bg-gray-50 transition">🐘 PHP</li>
+                <li class="border border-gray-200 rounded-lg py-3 hover:bg-gray-50 transition">🗄️ PostgreSQL</li>
+                <li class="border border-gray-200 rounded-lg py-3 hover:bg-gray-50 transition">🍃 MongoDB</li>
+            </ul>
+        </section>
+
+
+        <!-- Projects -->
+        <section class="mt-16 max-w-3xl w-full">
+            <h2 class="text-sm font-semibold text-gray-600 mb-4">PROJECTS</h2>
+            <div class="border border-gray-200 rounded-xl p-6 text-gray-500 text-sm text-center">
+                <p>🚧 Currently building something new — stay tuned!</p>
+                <a href="https://github.com/FriscoNP"
+                    class="inline-block mt-4 px-5 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition">
+                    Visit My GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- Learning Section -->
+        <section class="mt-16 max-w-3xl w-full">
+            <h2 class="text-sm font-semibold text-gray-600 mb-4">LEARNING</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                Currently exploring advanced concurrency patterns in Go, API observability, and clean architecture
+                principles for distributed systems.
+            </p>
+        </section>
+
+
+    </main>
+
+    <footer class="mt-auto py-6 text-center text-gray-500 text-sm border-t border-gray-200">
+        <p>© 2025 Frisco • Built with ❤️ and Tailwind CSS</p>
+        <div class="mt-2 space-x-4">
+            <a href="https://github.com/FriscoNP" class="hover:underline">GitHub</a>
+            <a href="https://linkedin.com/in/frisconp" class="hover:underline">LinkedIn</a>
+            <a href="mailto:frisconp.official@gmail.com" class="hover:underline">Email</a>
+        </div>
+    </footer>
+
 </body>
 
 </html>
