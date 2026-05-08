@@ -5,35 +5,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frisco — Backend Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+    </style>
 </head>
 
-<body class="flex flex-col min-h-screen bg-white text-gray-900">
+<body class="flex flex-col min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-black sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <a href="/" class="text-lg font-semibold text-black dark:text-white">Frisco</a>
+            <div class="flex items-center space-x-4">
+                <a href="mailto:frisconp.official@gmail.com"
+                    class="hidden sm:inline-block px-4 py-1.5 text-xs sm:text-sm bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                    Get In Touch
+                </a>
+                <button id="themeToggle" type="button" aria-pressed="false"
+                    class="relative inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+                    </svg>
+                    <svg id="moonIcon" class="w-5 h-5 text-gray-600 dark:text-white hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow flex flex-col items-center justify-center px-6 py-16">
+    <main class="flex-grow flex flex-col items-center px-4 sm:px-6 py-8 sm:py-12">
+        <!-- Running Text -->
+        <div class="w-full max-w-3xl mb-2 rounded-full bg-orange-100 dark:bg-orange-900/30 border-2 border-orange-300 dark:border-orange-700 py-2.5 px-4 overflow-hidden">
+            <div class="whitespace-nowrap animate-marquee text-xs sm:text-sm text-orange-800 dark:text-orange-200">
+                🚧 This portfolio is still under development — More features coming soon 🚧 &nbsp;&nbsp;🚧 This portfolio is still under development — More features coming soon 🚧 &nbsp;&nbsp;🚧 This portfolio is still under development — More features coming soon 🚧
+            </div>
+        </div>
+
         <!-- Hero Section -->
-        <section class="flex flex-col items-center text-center mt-10">
-            <img src="assets/png/avatar.png" alt="Frisco Avatar"
-                class="w-32 mb-4 rounded-full border-4 border-gray-100 shadow-sm">
-            <h1 class="text-3xl font-bold tracking-tight mb-2">Frisco</h1>
-            <p class="text-gray-600 text-center max-w-md mb-4">
-                Backend Engineer who builds scalable, maintainable systems with <strong>Golang</strong>.
-                Experienced with <strong>PHP</strong> frameworks like Laravel and CodeIgniter.
+        <section class="flex flex-col items-center text-center mt-4 sm:mt-8 w-full max-w-3xl">
+            <h1 class="text-2xl sm:text-4xl font-bold tracking-tight mb-2 sm:mb-4 text-black dark:text-white">Frisco</h1>
+            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-center max-w-2xl mb-4 sm:mb-6 leading-relaxed">
+                Backend Engineer building scalable systems with <strong>Golang</strong> and <strong>PHP</strong>.
                 Focused on clean architecture and reliable delivery.
             </p>
 
             <a href="mailto:frisconp.official@gmail.com"
-                class="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition">
+                class="px-6 sm:px-8 py-2.5 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-200 shadow-sm hover:shadow-md">
                 Get In Touch
             </a>
         </section>
 
+        <!-- Tech Stack -->
+        <section id="tech-stack" class="mt-8 sm:mt-12 max-w-3xl w-full">
+            <h2 class="text-xs sm:text-sm font-bold text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 uppercase tracking-wide">Tech Stack</h2>
+            <ul class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-gray-700 dark:text-gray-300 text-xs sm:text-sm text-center">
+                <li class="bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg py-2.5 sm:py-3 px-2 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transition-all">Golang</li>
+                <li class="bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg py-2.5 sm:py-3 px-2 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transition-all">PHP</li>
+                <li class="bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg py-2.5 sm:py-3 px-2 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transition-all">PostgreSQL</li>
+                <li class="bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg py-2.5 sm:py-3 px-2 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transition-all">MongoDB</li>
+            </ul>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="mt-8 sm:mt-12 max-w-3xl w-full">
+            <h2 class="text-xs sm:text-sm font-bold text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 uppercase tracking-wide">Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a href="https://github.com/FriscoNP" target="_blank" class="block bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-4 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                    <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Open Source</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Check my GitHub for recent projects and contributions</p>
+                </a>
+                <a href="posts/" class="block bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-4 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                    <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Technical Writing</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Read my blog posts about backend engineering</p>
+                </a>
+            </div>
+        </section>
 
         <!-- About Section -->
-        <section class="mt-16 max-w-3xl w-full">
-            <h2 class="text-sm font-semibold text-gray-600 mb-4">ABOUT</h2>
-            <p class="text-gray-700 text-sm leading-relaxed">
+        <section id="about" class="mt-8 sm:mt-12 max-w-3xl w-full">
+            <h2 class="text-xs sm:text-sm font-bold text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 uppercase tracking-wide">About</h2>
+            <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                 I'm passionate about designing backend systems that emphasize clarity, scalability, and performance.
                 I believe clean architecture is the foundation for good software — whether it's a microservice in Go
                 or a monolithic Laravel app. I enjoy solving problems quietly behind the scenes and letting the code
@@ -41,50 +116,61 @@
             </p>
         </section>
 
-        <!-- Tech Stack -->
-        <section class="mt-16 max-w-3xl w-full">
-            <h2 class="text-sm font-semibold text-gray-600 mb-4">TECH STACK</h2>
-            <ul class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-gray-700 text-sm text-center">
-                <li class="border border-gray-200 rounded-lg py-3 hover:bg-gray-50 transition">⚙️ Golang</li>
-                <li class="border border-gray-200 rounded-lg py-3 hover:bg-gray-50 transition">🐘 PHP</li>
-                <li class="border border-gray-200 rounded-lg py-3 hover:bg-gray-50 transition">🗄️ PostgreSQL</li>
-                <li class="border border-gray-200 rounded-lg py-3 hover:bg-gray-50 transition">🍃 MongoDB</li>
-            </ul>
-        </section>
-
-
-        <!-- Projects -->
-        <section class="mt-16 max-w-3xl w-full">
-            <h2 class="text-sm font-semibold text-gray-600 mb-4">PROJECTS</h2>
-            <div class="border border-gray-200 rounded-xl p-6 text-gray-500 text-sm text-center">
-                <p>🚧 Currently building something new — stay tuned!</p>
-                <a href="https://github.com/FriscoNP"
-                    class="inline-block mt-4 px-5 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition">
-                    Visit My GitHub
-                </a>
+        <!-- Blog Section -->
+        <section id="blog" class="mt-8 sm:mt-12 max-w-3xl w-full">
+            <div class="flex justify-between items-center mb-3 sm:mb-4">
+                <h2 class="text-xs sm:text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Blog</h2>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-4 sm:p-6 text-gray-600 dark:text-gray-400 text-sm text-center">
+                <p>Coming soon...</p>
             </div>
         </section>
 
-        <!-- Learning Section -->
-        <section class="mt-16 max-w-3xl w-full">
-            <h2 class="text-sm font-semibold text-gray-600 mb-4">LEARNING</h2>
-            <p class="text-gray-700 text-sm leading-relaxed">
-                Currently exploring advanced concurrency patterns in Go, API observability, and clean architecture
-                principles for distributed systems.
-            </p>
-        </section>
-
-
     </main>
 
-    <footer class="mt-auto py-6 text-center text-gray-500 text-sm border-t border-gray-200">
-        <p>© 2025 Frisco • Built with ❤️ and Tailwind CSS</p>
-        <div class="mt-2 space-x-4">
-            <a href="https://github.com/FriscoNP" class="hover:underline">GitHub</a>
-            <a href="https://linkedin.com/in/frisconp" class="hover:underline">LinkedIn</a>
-            <a href="mailto:frisconp.official@gmail.com" class="hover:underline">Email</a>
+    <footer class="mt-12 sm:mt-auto py-6 sm:py-8 text-center text-gray-600 dark:text-gray-400 text-xs sm:text-sm border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black">
+        <p>© 2025 Frisco • Built with Tailwind CSS & AI</p>
+        <div class="mt-3 space-x-4 flex justify-center">
+            <a href="https://github.com/FriscoNP" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GitHub</a>
+            <a href="https://linkedin.com/in/frisconp" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">LinkedIn</a>
+            <a href="mailto:frisconp.official@gmail.com" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Email</a>
         </div>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+
+        // Load theme preference from localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            themeToggle.setAttribute('aria-pressed', 'true');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.classList.contains('dark');
+
+            if (isDark) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeToggle.setAttribute('aria-pressed', 'false');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.setAttribute('aria-pressed', 'true');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        });
+    </script>
 
 </body>
 
