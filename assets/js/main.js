@@ -12,6 +12,9 @@
 
     const { profile, links } = data;
 
+    const icon = (name) =>
+        `<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-${name}"></use></svg>`;
+
     /* Hero */
     $('name').textContent = profile.name;
     $('title').textContent = profile.title;
@@ -22,11 +25,11 @@
     /* About */
     $('aboutText').innerHTML = profile.about.map((p) => `<p>${escapeHtml(p)}</p>`).join('');
     $('facts').innerHTML = [
-        ['Role', profile.title],
-        ['Company', profile.company],
-        ['Location', profile.location],
+        ['briefcase', 'Role', profile.title],
+        ['building', 'Company', profile.company],
+        ['map-pin', 'Location', profile.location],
     ]
-        .map(([k, v]) => `<div><dt>${k}</dt><dd>${val(v)}</dd></div>`)
+        .map(([i, k, v]) => `<div><dt>${icon(i)}${k}</dt><dd>${val(v)}</dd></div>`)
         .join('');
 
     /* Skills */
@@ -60,7 +63,10 @@
         .map(
             (p) => `
             <a class="card project" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">
-                <h3>${escapeHtml(p.name)}</h3>
+                <div class="project__head">
+                    <h3>${escapeHtml(p.name)}</h3>
+                    <span class="project__ext" title="Opens in a new tab">${icon('external')}</span>
+                </div>
                 <p>${escapeHtml(p.description)}</p>
                 <ul class="chips">${p.tags.map((t) => `<li>${escapeHtml(t)}</li>`).join('')}</ul>
             </a>`
@@ -82,9 +88,9 @@
 
     /* Contact */
     $('contactLinks').innerHTML = `
-        <a class="btn" href="mailto:${escapeHtml(links.email)}">Email</a>
-        <a class="btn btn--outline" href="${escapeHtml(links.github)}" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn--outline" href="${escapeHtml(links.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>`;
+        <a class="btn" href="mailto:${escapeHtml(links.email)}">${icon('mail')} Email</a>
+        <a class="btn btn--outline" href="${escapeHtml(links.github)}" target="_blank" rel="noopener">${icon('code')} GitHub</a>
+        <a class="btn btn--outline" href="${escapeHtml(links.linkedin)}" target="_blank" rel="noopener">${icon('link')} LinkedIn</a>`;
 
     /* Reveal sections on scroll */
     const sections = document.querySelectorAll('.section');
