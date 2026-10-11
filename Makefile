@@ -1,9 +1,14 @@
-.PHONY: dev new-post serve
+.PHONY: dev new-post serve check
 
 dev:
 	python3 -m http.server 8080
 
 serve: dev
+
+# Check JS syntax and that local links, assets and anchors resolve
+check:
+	@for f in assets/js/*.js; do node --check "$$f" || exit 1; done
+	@python3 scripts/check.py
 
 # Create a new blog post
 # Usage: make new-post title="My Post Title"

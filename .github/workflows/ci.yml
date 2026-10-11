@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Validate site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check JavaScript syntax
+        run: |
+          for f in assets/js/*.js; do
+            node --check "$f"
+          done
+
+      - name: Check links, assets and anchors
+        run: python3 scripts/check.py
