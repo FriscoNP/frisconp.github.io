@@ -8,11 +8,13 @@
 - `assets/js/main.js` renders sections from `CV_DATA` and adds light interactivity (scroll reveal, active nav link).
 - `assets/js/theme.js` handles light/dark mode and the mobile menu on every page.
 - `assets/css/style.css` holds all styling: theme tokens on `:root` / `[data-theme="dark"]`, a reduced-motion block and a print stylesheet that outputs a plain CV.
-- `posts/` is the blog.
+- `posts/` is the blog; `404.html` is the custom not-found page (uses root-relative asset paths).
+- `scripts/check.py` is the link/asset checker; `.github/workflows/ci.yml` runs it. Keep `sitemap.xml` in sync when adding pages.
 
 ## Commands
 
 - `make dev` serves the site at http://localhost:8080.
+- `make check` checks JS syntax and that local links, assets and anchors resolve (also run by CI).
 
 ## Conventions
 
