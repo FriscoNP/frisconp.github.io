@@ -25,12 +25,10 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
 
         const syncTheme = () => {
             const dark = root.dataset.theme === 'dark';
             if (themeToggle) themeToggle.setAttribute('aria-pressed', String(dark));
-            if (themeIcon) themeIcon.textContent = dark ? '☾' : '☀';
         };
         syncTheme();
 

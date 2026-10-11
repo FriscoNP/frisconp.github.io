@@ -107,7 +107,7 @@ h3 {
     font: inherit;
     font-size: 14px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 16px; /* whole pixels, same as the 16px icon, so text and icon snap to the pixel grid together */
     color: var(--on-accent);
     background: var(--accent);
     border: 1px solid var(--accent);
@@ -120,6 +120,48 @@ h3 {
 .btn:hover {
     background: var(--accent-hover);
     border-color: var(--accent-hover);
+}
+
+.icon {
+    display: inline-block;
+    flex: none;
+    width: 1.1em;
+    height: 1.1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Icons next to button text. Keep this a whole number of pixels: fractional offsets
+   round differently depending on where the button sits on the page.
+   Negative values move the icon up, positive values move it down. */
+.btn {
+    --icon-nudge: 0px;
+}
+
+.btn .icon {
+    position: relative;
+    top: var(--icon-nudge);
+    width: 16px;
+    height: 16px;
+}
+
+.btn--icon .icon {
+    top: 0;
+    width: 18px;
+    height: 18px;
+}
+
+/* Theme toggle shows the sun in light mode and the moon in dark mode */
+.theme-moon,
+[data-theme="dark"] .theme-sun {
+    display: none;
+}
+
+[data-theme="dark"] .theme-moon {
+    display: inline-block;
 }
 
 .btn--outline {
@@ -318,12 +360,33 @@ h3 {
 
 @media (max-width: 600px) {
     .hero {
-        padding-top: 48px;
+        padding: 48px 20px 24px;
     }
 
     .hero__inner {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero__text {
+        width: 100%;
+    }
+
+    .hero__actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .hero__actions .btn {
+        min-height: 44px;
+    }
+
+    .hero__actions .btn:first-child {
+        grid-column: 1 / -1;
     }
 }
 
@@ -391,6 +454,9 @@ main {
 }
 
 .facts dt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -484,6 +550,13 @@ main {
     color: var(--muted);
 }
 
+/* Education & training: show the year under the title instead of beside it */
+#education .entry__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
 .entry ul {
     margin: 8px 0 0;
     padding-left: 20px;
@@ -518,10 +591,30 @@ main {
     transform: translateY(-2px);
 }
 
+.project__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
 .project h3 {
     font-size: 16px;
     font-weight: 600;
     word-break: break-word;
+}
+
+.project__ext {
+    flex: none;
+    display: inline-flex;
+    color: var(--muted);
+    transition: color 0.15s, transform 0.15s;
+}
+
+.project:hover .project__ext,
+.project:focus-visible .project__ext {
+    color: var(--accent);
+    transform: translate(2px, -2px);
 }
 
 .project p {
@@ -632,6 +725,7 @@ main {
         line-height: 1.4;
     }
 
+    .icon,
     .nav,
     .hero__avatar,
     .hero__actions,

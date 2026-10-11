@@ -20,7 +20,7 @@
             <a href="/" class="nav__logo">Frisco</a>
             <div class="nav__controls">
                 <button id="themeToggle" class="btn btn--outline btn--icon" type="button" aria-pressed="false" title="Light / dark theme">
-                    <span aria-hidden="true" id="themeIcon">☀</span><span class="sr-only">Dark mode</span>
+                    <svg class="icon theme-sun" aria-hidden="true"><use href="/assets/img/icons.svg#i-sun"></use></svg><svg class="icon theme-moon" aria-hidden="true"><use href="/assets/img/icons.svg#i-moon"></use></svg><span class="sr-only">Toggle dark mode</span>
                 </button>
             </div>
         </div>
@@ -31,7 +31,7 @@
             <div class="card panel">
                 <h1>404 — Page not found</h1>
                 <p>The page you're looking for doesn't exist or has moved.</p>
-                <a class="btn" href="/">Back to home</a>
+                <a class="btn" href="/"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#i-arrow-left"></use></svg> Back to home</a>
             </div>
         </section>
     </main>

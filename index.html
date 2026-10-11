@@ -40,10 +40,10 @@
             </nav>
             <div class="nav__controls">
                 <button id="themeToggle" class="btn btn--outline btn--icon" type="button" aria-pressed="false" title="Light / dark theme">
-                    <span aria-hidden="true" id="themeIcon">☀</span><span class="sr-only">Dark mode</span>
+                    <svg class="icon theme-sun" aria-hidden="true"><use href="assets/img/icons.svg#i-sun"></use></svg><svg class="icon theme-moon" aria-hidden="true"><use href="assets/img/icons.svg#i-moon"></use></svg><span class="sr-only">Toggle dark mode</span>
                 </button>
                 <button id="menuToggle" class="btn btn--outline btn--icon nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu" title="Menu">
-                    <span aria-hidden="true">≡</span><span class="sr-only">Menu</span>
+                    <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"></use></svg><span class="sr-only">Menu</span>
                 </button>
             </div>
         </div>
@@ -53,14 +53,14 @@
         <section class="hero container" aria-labelledby="name">
             <div class="hero__inner">
                 <div class="hero__avatar"><img src="assets/img/avatar.png" alt="Photo of Frisco Nirwana Putra" width="400" height="400"></div>
-                <div>
+                <div class="hero__text">
                     <h1 id="name"></h1>
                     <p class="hero__title" id="title"></p>
                     <p class="hero__tagline" id="tagline"></p>
                     <div class="hero__actions">
-                        <a class="btn" href="#contact">Get in touch</a>
-                        <a class="btn btn--outline" id="heroGithub" href="#" target="_blank" rel="noopener">GitHub</a>
-                        <button class="btn btn--outline no-print" type="button" id="printCv">Download CV</button>
+                        <a class="btn" href="#contact"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-mail"></use></svg> Get in touch</a>
+                        <a class="btn btn--outline" id="heroGithub" href="#" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-code"></use></svg> GitHub</a>
+                        <button class="btn btn--outline no-print" type="button" id="printCv"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-download"></use></svg> Download CV</button>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                 <h2 class="section__title">Blog</h2>
                 <div class="card panel">
                     <p>Technical writing about backend engineering — coming soon.</p>
-                    <a class="btn btn--outline" href="posts/">Go to blog</a>
+                    <a class="btn btn--outline" href="posts/">Go to blog <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"></use></svg></a>
                 </div>
             </section>
 
