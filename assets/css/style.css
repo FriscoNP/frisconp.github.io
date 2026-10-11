@@ -358,6 +358,14 @@ h3 {
     gap: 10px;
 }
 
+/* Contact buttons: defined here, before the mobile media query, so the phone grid below can override it */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 @media (max-width: 600px) {
     .hero {
         padding: 48px 20px 24px;
@@ -373,7 +381,10 @@ h3 {
         width: 100%;
     }
 
-    .hero__actions {
+    /* Hero and contact buttons share the same phone layout:
+       one full-width primary button on top, the others side by side below. */
+    .hero__actions,
+    .actions {
         display: grid;
         grid-template-columns: 1fr 1fr;
         width: 100%;
@@ -381,11 +392,13 @@ h3 {
         margin: 0 auto;
     }
 
-    .hero__actions .btn {
+    .hero__actions .btn,
+    .actions .btn {
         min-height: 44px;
     }
 
-    .hero__actions .btn:first-child {
+    .hero__actions .btn:first-child,
+    .actions .btn:first-child {
         grid-column: 1 / -1;
     }
 }
@@ -633,13 +646,6 @@ main {
 .panel p {
     margin: 0 0 16px;
     color: var(--muted);
-}
-
-.actions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
 }
 
 .breadcrumb {
